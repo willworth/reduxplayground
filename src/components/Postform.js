@@ -22,22 +22,32 @@ class Postform extends Component {
 
     onSubmit(e) {
         e.preventDefault();
+        console.log("submitted");
         const post = {
             title: this.state.title,
             body: this.state.body
 
         }
-        fetch('https://jsonplaceholder.typicode.com/posts', {
+
+
+        const options = {
             method: 'POST',
             body: JSON.stringify(post),
             headers: {
-                "Content-type": "application/json; charset=UTF-8"
+                'Content-Type': 'application/json'
             }
-        })
+        };
+
+
+
+
+
+        fetch('https://jsonplaceholder.typicode.com/posts', options)
+
             .then(res => res.json())
             .then(res => console.log(res));
-    }
 
+    }
 
     render() {
         return (
@@ -54,8 +64,8 @@ class Postform extends Component {
                         <textarea name="body" id="" cols="30" rows="10" onChange={this.onChange} value={this.state.body}></textarea>
                     </div>
                     <br />
+                    <button type="submit">Submit</button>
                 </form>
-                <button type="submit">Submit</button>
             </div>
         )
     }
