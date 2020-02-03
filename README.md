@@ -4,3 +4,27 @@ this starts from a "Redux Crash Course With React" by Brad Traversy.  If you wan
 
 
 [the youtube tutorial](https://www.youtube.com/watch?v=93p3LxR9xfM)
+
+
+
+## notes
+
+
+
+npm i redux react-redux redux-thunk
+
+
+
+bring in a provider = the glue for react and redux
+
+//app.js
+
+import {  Provider } from 'react-redux';
+
+
+wrap app in provider
+
+
+then 
+
+<Provider store={store}>
