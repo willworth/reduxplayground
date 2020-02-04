@@ -49,7 +49,7 @@ class Postform extends Component {
                     <br />
                     <div>
                         <label htmlFor="">Body: </label> <br />
-                        <textarea name="body" id="" cols="30" rows="10" onChange={this.onChange} value={this.state.body}></textarea>
+                        <textarea name="body" id="" cols="70" rows="10" onChange={this.onChange} value={this.state.body}></textarea>
                     </div>
                     <br />
                     <button type="submit">Submit</button>

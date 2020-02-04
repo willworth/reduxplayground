@@ -23,10 +23,12 @@ export const createPost = postData => dispatch => {
         body: JSON.stringify(postData)
     })
         .then(res => res.json())
+        .then(console.log("the data being passed is", JSON.stringify(postData)))
         .then(post =>
             dispatch({
                 type: NEW_POST,
                 payload: post
             })
         );
+
 };

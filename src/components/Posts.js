@@ -9,6 +9,15 @@ class Posts extends Component {
     }
 
 
+    componentDidUpdate(prevProps) {
+        // Typical usage (don't forget to compare props):
+        if (this.props.newPost !== prevProps.newPost) {
+            console.log("not the same!")
+            this.props.posts.unshift(this.props.newPost);
+        }
+    }
+
+
 
     render() {
         const postItems = this.props.posts.map(post => (
@@ -30,12 +39,14 @@ class Posts extends Component {
 
 Posts.protoTypes = {
     fetchPosts: PropTypes.func.isRequired,
-    posts: PropTypes.array.isRequired
+    posts: PropTypes.array.isRequired,
+    newPost: PropTypes.object
 }
 
 
 const mapStateToProps = state => ({
-    posts: state.posts.items
+    posts: state.posts.items,
+    newPost: state.posts.item
 })
 
 
